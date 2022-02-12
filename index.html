@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--Load airtable JS-->
+    <script type="text/javascript" src="js/airtable.browser.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- <script type="text/javascript" src="js/charting.js"></script> -->
+        
+    <link rel="stylesheet" href="css/main.css"></link>
+
+    <title>Ski Tracker</title>
+  </head>
+
+  <body>
+    <h1>Ski Day Tracker: 2022 Season</h1>
+
+    <div id="mainBody">
+          <div id="chartPanel">
+              <div id="barChart"></div>
+              <div id="pieChart"></div>
+          </div>
+
+          <div class="buttons">
+            <h2>Click to Minus a Day</h2>
+            <button class="days" id="buttonMondayDown">Monday</button>
+            <button class="days" id="buttonTuesdayDown">Tuesday</button>
+            <button class="days" id="buttonWednesdayDown">Wednesday</button>
+            <button class="days" id="buttonThursdayDown">Thursday</button>
+            <button class="days" id="buttonFridayDown">Friday</button>
+            <button class="days" id="buttonSaturdayDown">Saturday</button>
+            <button class="days" id="buttonSundayDown">Sunday</button>
+        </div>
+
+          <div class="buttons">
+              <h2>Click to Add a Day</h2>
+              <button class="days" id="buttonMonday">Monday</button>
+              <button class="days" id="buttonTuesday">Tuesday</button>
+              <button class="days" id="buttonWednesday">Wednesday</button>
+              <button class="days" id="buttonThursday">Thursday</button>
+              <button class="days" id="buttonFriday">Friday</button>
+              <button class="days" id="buttonSaturday">Saturday</button>
+              <button class="days" id="buttonSunday">Sunday</button>
+          </div>
+
+      </div>
+  </body>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChart2);
+      google.charts.setOnLoadCallback(drawChart3);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300,
+                       'is3D':true};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+
+      
+      // Stacked Bar Chart
+      function drawChart2() {
+
+        // Create the data table.
+        var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'Year');
+        data2.addColumn('number', 'Debt');
+        data2.addColumn('number', 'OCF');
+        data2.addColumn('number', 'Cash from BS');
+        data2.addRows([
+        ['2022', 1000, 300, 0],
+        ['2023', 1500, 800, 0],
+        ['2024', 1500, 1000, 250],
+        ['2025', 1500, 1500, 0],
+        ['2026', 1000, 2000, 0]
+        ]);
+
+        // Set chart options
+        var options2 = {title:'Funding plan',
+                    width:500,
+                    height:600,
+                    is3D:true,
+                    isStacked:true
+                    };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
+        chart.draw(data2, options2);
+        }
+
+        
+        // Waterfall chart
+        function drawChart3() {
+
+            // Create the data table.
+            var data3 = google.visualization.arrayToDataTable([          
+                ['2021', 0, 0, 1000, 1000],
+                ['New Sites', 1000, 1000, 4000, 4000],
+                ['OEC/Site', 4000, 4000, 5100, 5100],
+                ['Financial Utilization', 5100, 5100, 5000, 5000],
+                ['Sales', 5000, 5000, 5500, 5500],
+                ['2026', 0, 0, 5500, 5500]
+                // Treat the first row as data.
+            ], true);
+
+
+
+            // Set chart options
+            var options3 = {title:'Revenue bridge',
+                        width:500,
+                        height:400,
+                        legend:'none',
+                        bar: {groupWidth:'90%'}, // 100% removes space between bars
+                        candlestick: {
+                            fallingColor: {strokeWidth: 0, fill: '#a52714'}, // red
+                            risingColor: {strokeWidth: 0, fill: '#0f9d58'} // green
+                        }
+                    };
+                        //is3D:true};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div3'));
+            chart.draw(data3, options3);
+        }
+    </script>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+    <div id="chart_div2"></div>
+    <div id="chart_div3"></div>
+  </body>
+</html>

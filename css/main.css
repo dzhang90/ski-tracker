@@ -1,0 +1,40 @@
+body {
+    background: lightblue;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+#mainBody {
+    width: 800px;
+    height: 400px;
+}
+
+#chartPanel {
+    width: 500px;
+    height: 400px;
+    float: left;
+}
+
+.buttons {
+    width: 150px;
+    height: 400px;
+    float: right; 
+}
+
+#barChart, #pieChart {
+    padding: 10px;
+    width: 90%;
+    height: 90%;
+}
+
+.days {
+    width: 100px;
+    height: 30px;
+    margin: 8px;
+}
